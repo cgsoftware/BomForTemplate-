@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<openerp>
+  <data>
+
+
+    <record model="ir.ui.view" id="bom_template_form">
+      <field name="name">bom.template.form</field>
+      <field name="model">mrp.bom</field>
+      <field name="inherit_id" ref="mrp.mrp_bom_form_view"/>
+      <field name="arch" type="xml">
+ 			  
+            <field name="type" position='after'>
+              <field name="for_template" on_change="cktemplate(for_template,product_id)" />
+            </field>
+  					
+        
+      </field>
+    </record>   
+    
+    <record model="ir.ui.view" id="bom_visible_type_tree">
+      <field name="name">bom.visible.type.tree</field>
+      <field name="model">mrp.bom</field>
+      <field name="inherit_id" ref="mrp.mrp_bom_form_view"/>
+      <field name="arch" type="xml">
+        
+        <field name="date_stop" position='after'>
+          <field name="type"  />
+        </field>
+        
+        
+      </field>
+    </record>       
+    
+    </data>
+</openerp>
